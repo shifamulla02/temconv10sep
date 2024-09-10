@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title> temperature converter by shifa </title>
+		<style>
+			*{font-size:40px; font-family: Times New Roman;}
+			body{background-color: PeachPuff;}
+		</style>
+	</head>
+
+	<body>
+		<center>
+			<h1> ~ TEMPERATURE CONVERTER ~ </h1>
+			<form>
+
+				<label for="cel" > Enter in celcius :</label>
+				<input type="text"	id="cel"	placeholder="deg celsius"/>
+				<br/><br/>
+ 				<label for="fah" > Enter in fahrenheit :</label>
+				<input type="text" 	id="fah"	placeholder="deg fahrenheit"/>
+				<br/><br/>
+				 
+			</form>
+
+			<script>
+					let cel= document.getElementById("cel");
+					let fah= document.getElementById("fah");
+					let c= parseFloat(cel.value);
+					let f= parseFloat(fah.value);					 
+			 		
+					cel.addEventListener("input", function(){
+						let c=parseFloat(cel.value);
+						let f= (c*1.8)+32;
+						fah.value=f.toFixed(2);
+					});
+
+					fah.addEventListener("input", function(){
+						let f=parseFloat(fah.value);
+						let c= (f-32)*5/9;
+						cel.value=c.toFixed(2);
+					});
+												
+			</script>
+		
+		</center>
+	</body>
+
+</html>
